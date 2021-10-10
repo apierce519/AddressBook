@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "addressBooks")
+@Table(name = "AddressBooks")
 
 /**
  * @author Andrew Pierce - ajpierce1 CIS175 - Fall 2021 Oct 7, 2021
