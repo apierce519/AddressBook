@@ -83,7 +83,7 @@ public class Contact {
 
 	@Override
 	public String toString() {
-		return "AddressBook [name=" + name + ", dob=" + dob + ", address=" + address + ", phoneNumber=" + phoneNumber
+		return "Contact [name=" + name + ", dob=" + dob + ", address=" + address + ", phoneNumber=" + phoneNumber
 				+ ", contactCreated=" + contactCreated + "]";
 	} 
 	

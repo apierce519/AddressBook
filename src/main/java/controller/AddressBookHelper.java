@@ -31,7 +31,7 @@ public class AddressBookHelper {
 	@SuppressWarnings("unchecked")
 	public List<AddressBook> getAddressBooks() {
 		EntityManager em = emfactory.createEntityManager();
-		return em.createQuery("SELECT ab FROM AddressBooks ab").getResultList();
+		return em.createQuery("SELECT ab FROM AddressBook ab").getResultList();
 
 	}
 
@@ -48,7 +48,7 @@ public class AddressBookHelper {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
 
-		TypedQuery<AddressBook> typedQuery = em.createQuery("SELECT ab FROM AddressBooks WHERE ab.id = :selectedId",
+		TypedQuery<AddressBook> typedQuery = em.createQuery("SELECT ab FROM AddressBook WHERE ab.id = :selectedId",
 				AddressBook.class);
 		typedQuery.setParameter("selectedId", instanceToDelete.getId());
 
