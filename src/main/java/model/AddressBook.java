@@ -23,7 +23,7 @@ public class AddressBook {
 	private String owner;
 	private int contactCount;
 	private LocalDate creationDate;
-	private List<ContactEntry> contactList;
+	private List<Contact> contactList;
 
 	/**
 	 * 
@@ -51,14 +51,14 @@ public class AddressBook {
 	/**
 	 * @return the contactList
 	 */
-	public List<ContactEntry> getContactList() {
+	public List<Contact> getContactList() {
 		return contactList;
 	}
 
 	/**
 	 * @param contactList the contactList to set
 	 */
-	public void setContactList(List<ContactEntry> contactList) {
+	public void setContactList(List<Contact> contactList) {
 		this.contactList = contactList;
 	}
 

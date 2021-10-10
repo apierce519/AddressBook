@@ -14,10 +14,13 @@ import javax.persistence.Id;
  * CIS175 - Fall 2021
  * Oct 9, 2021
  */
-public class ContactEntry {
+
+
+public class Contact {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 	private String name;
 	private LocalDate dob;
 	private String address;
@@ -25,11 +28,11 @@ public class ContactEntry {
 	private LocalDateTime contactCreated;
 	
 	//Constructors
-	public ContactEntry() {
+	public Contact() {
 		
 	}
 	
-	public ContactEntry(String name, LocalDate dob, String address, String phoneNumber, LocalDateTime contactCreated) {
+	public Contact(String name, LocalDate dob, String address, String phoneNumber, LocalDateTime contactCreated) {
 		super();
 		this.name = name;
 		this.dob = dob;
@@ -68,6 +71,14 @@ public class ContactEntry {
 	}
 	public void setContactCreated(LocalDateTime contactCreated) {
 		this.contactCreated = contactCreated;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	@Override

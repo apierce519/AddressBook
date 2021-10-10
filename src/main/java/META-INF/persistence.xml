@@ -3,7 +3,7 @@
 	<persistence-unit name="AddressBook" transaction-type="RESOURCE_LOCAL">
 		<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>model.AddressBook</class>
-		<class>model.ContactEntry</class>
+		<class>model.Contact</class>
 		<class>controller.LocalDateAttributeConverter</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
