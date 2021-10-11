@@ -46,7 +46,7 @@ public class ContactHelper {
 		em.close();
 	}
 	
-	public Contact searchForEntryById(Contact entryToEdit) {
+	public Contact searchForEntryById(int entryToEdit) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
 		Contact found = em.find(Contact.class, entryToEdit);

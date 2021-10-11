@@ -31,7 +31,18 @@ public class Contact {
 	public Contact() {
 		
 	}
-	
+
+	public Contact(int id, String name, LocalDate dob, String address, String phoneNumber,
+			LocalDateTime contactCreated) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.dob = dob;
+		this.address = address;
+		this.phoneNumber = phoneNumber;
+		this.contactCreated = contactCreated;
+	}
+
 	public Contact(String name, LocalDate dob, String address, String phoneNumber, LocalDateTime contactCreated) {
 		super();
 		this.name = name;
