@@ -10,7 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -24,7 +23,7 @@ public class AddressBook {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private String owner;
+	private String listName;
 	private int contactCount;
 	private LocalDate creationDate;
 	@ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
@@ -40,21 +39,21 @@ public class AddressBook {
 	}
 
 	/**
-	 * @param owner
+	 * @param listName
 	 */
-	public AddressBook(String owner) {
+	public AddressBook(String listName) {
 		super();
-		this.owner = owner;
+		this.listName = listName;
 		setCreationDate();
 	}
 
 	/**
-	 * @param owner
+	 * @param listName
 	 * @param contactList
 	 */
-	public AddressBook(String owner, List<Contact> contactList) {
+	public AddressBook(String listName, List<Contact> contactList) {
 		super();
-		this.owner = owner;
+		this.listName = listName;
 		this.contactList = contactList;
 		setContactCount();
 		setCreationDate();
@@ -93,14 +92,14 @@ public class AddressBook {
 	 * @return the owner
 	 */
 	public String getOwner() {
-		return owner;
+		return listName;
 	}
 
 	/**
-	 * @param owner the owner to set
+	 * @param listName the owner to set
 	 */
-	public void setOwner(String owner) {
-		this.owner = owner;
+	public void setOwner(String listName) {
+		this.listName = listName;
 	}
 
 	/**
@@ -133,7 +132,7 @@ public class AddressBook {
 
 	@Override
 	public String toString() {
-		return "AddressBook [id=" + id + ", owner=" + owner + ", contactCount=" + contactCount + ", creationDate="
+		return "AddressBook [id=" + id + ", listName=" + listName + ", contactCount=" + contactCount + ", creationDate="
 				+ creationDate + ", contactList=" + contactList + "]";
 	}
 
