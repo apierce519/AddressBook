@@ -8,11 +8,11 @@
 <title>All Contacts</title>
 </head>
 <body>
-
-<form method = "post" action = "contactNavigationServlet">
-<table>
-	<c:forEach items="${requestScope.allContacts}" var="currentcontact">
-		<tr>
+<h1>Contact List</h1>
+	<form method = "post" action = "contactNavigationServlet">
+	<table>
+		<c:forEach items="${requestScope.allContacts}" var="currentcontact">
+	<tr>
  	 <td><input type="radio" name="id" value="${currentcontact.id}"></td>
  	 <td> Name: 	     ${currentcontact.name}</td>
 	 <td> Date of Birth: ${currentcontact.dob}</td>

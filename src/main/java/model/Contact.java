@@ -7,15 +7,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity
+
 /**
  * @author Christian O'Brien - cpobrien3
  * CIS175 - Fall 2021
  * Oct 9, 2021
  */
 
-
+@Entity
+@Table(name = "contacts")
 public class Contact {
 	
 	@Id

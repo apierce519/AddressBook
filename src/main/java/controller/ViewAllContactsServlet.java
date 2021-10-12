@@ -29,7 +29,7 @@ public class ViewAllContactsServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		ContactHelper ch = new ContactHelper();
 		request.setAttribute("allContacts", ch.showAllEntries());
-		String path = "/contact-list.jsp";
+		String path = "/view-all-contacts.jsp";
 		
 		if(ch.showAllEntries().isEmpty()){
 				path = "/add-contact.jsp";
