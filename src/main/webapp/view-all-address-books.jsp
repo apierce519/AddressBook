@@ -14,24 +14,24 @@
 	
 		<table>
 		
-			<c:forEach items = "${requestScope.allAddressBooks}" var = "currentaddressbook">
+			<c:forEach items = "${requestScope.allAddressBooks}" var = "currentab">
 			
 				<tr>
 				
-					<td><input type = "radio" name = "id" value = "${currentaddressbook.id}"></td>
-					<td><h2>${currentaddressbook.listName}</h2></td>
+					<td><input type = "radio" name = "id" value = "${currentab.id}"></td>
+					<td><h2>${currentab.listName}</h2></td>
 				
 				</tr>
 				<tr>
 
-					<td colspan = "3">Number of Contacts: ${currentAddressBook.contactCount}  </td>
-					<td colspan = "3">Creation Date: ${currentAddressBook.creationDate} </td>
+					<td colspan = "3">Number of Contacts: ${currentab.contactCount}  </td>
+					<td colspan = "3">Creation Date: ${currentab.creationDate} </td>
 									
 				</tr>
-				<c:forEach var = "contactVal" items = "${currentAddressBook.contactList}">
+				<c:forEach var = "contact" items = "${currentab.contactList}">
 					<tr>
 						<td></td>
-						<td colspan = "3">${contactVal.name},${contactVal.dob},${contactVal.address},${phoneNumber},${contactCreated}</td>
+						<td colspan = "3">Name: ${contact.name}, DOB: ${contact.dob},Address: ${contact.address}, Phone #: ${contact.phoneNumber}, Creation Date: ${contact.contactCreated}</td>
 					</tr>
 				</c:forEach>
 			</c:forEach>
@@ -44,7 +44,7 @@
 	</form>
 	
 	<a href = "generateContactListForAddressBook">Create a new Address Book</a>
-	<a href = "main-menu">Return to main menu</a>
+	<a href = "main-menu.html">Return to main menu</a>
 	
 </body>
 </html>

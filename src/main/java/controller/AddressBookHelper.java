@@ -48,7 +48,7 @@ public class AddressBookHelper {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
 
-		TypedQuery<AddressBook> typedQuery = em.createQuery("SELECT ab FROM AddressBook WHERE ab.id = :selectedId",
+		TypedQuery<AddressBook> typedQuery = em.createQuery("SELECT ab FROM AddressBook ab WHERE ab.id = :selectedId",
 				AddressBook.class);
 		typedQuery.setParameter("selectedId", instanceToDelete.getId());
 
