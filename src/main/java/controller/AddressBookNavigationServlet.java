@@ -12,7 +12,7 @@ import model.AddressBook;
 /**
  * Servlet implementation class AddressBookNavigationServlet
  */
-@WebServlet("/AddressBookNavigationServlet")
+@WebServlet("/addressBookNavigationServlet")
 public class AddressBookNavigationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static AddressBookHelper dao = new AddressBookHelper();
@@ -81,7 +81,7 @@ public class AddressBookNavigationServlet extends HttpServlet {
 
 	public void deleteAddressBook(HttpServletRequest request) {
 		dao.deleteAddressBook(searchAddressBooks(request));
-		path = "viewAllAddressBooksServlet";
+		path = "/viewAllAddressBooksServlet";
 	}
 
 	public void editAddressBook(HttpServletRequest request) {
@@ -98,7 +98,6 @@ public class AddressBookNavigationServlet extends HttpServlet {
 			request.setAttribute("allContacts", " ");
 		}
 		path = "/edit-address-book.jsp";
-
 	}
 
 	public void addAddressBook() {

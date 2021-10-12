@@ -91,14 +91,14 @@ public class AddressBook {
 	/**
 	 * @return the owner
 	 */
-	public String getOwner() {
+	public String getListName() {
 		return listName;
 	}
 
 	/**
 	 * @param listName the owner to set
 	 */
-	public void setOwner(String listName) {
+	public void setListName(String listName) {
 		this.listName = listName;
 	}
 
