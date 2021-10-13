@@ -8,6 +8,7 @@
 <title>Edit Contact</title>
 </head>
 <body>
+<h1>Edit a Contact</h1>
 <form action = "editContactServlet" method="post">
 	Name : <input type ="text" name = "name" value= "${contactToEdit.name}">
 	Phone Number: <input type = "text" name = "phone#" value= "${contactToEdit.phoneNumber}">

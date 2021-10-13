@@ -25,6 +25,7 @@
 <input type = "submit" value = "edit" name="doThisToContact">
 <input type = "submit" value = "delete" name="doThisToContact">
 <input type="submit" value = "add" name = "doThisToContact">
+<a href = "main-menu.html"> Go back to the homepage</a>
 </form>
 </body>
 </html>

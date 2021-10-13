@@ -35,8 +35,7 @@ public class ContactHelper {
 	public void deleteEntry(Contact toDelete) {
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		TypedQuery<Contact> typedQuery = em.createQuery("select c FROM Contact c where c.id := selectedId ", Contact.class);
-
+		TypedQuery<Contact> typedQuery = em.createQuery("select c FROM Contact c where c.id = :selectedId ", Contact.class);
 		typedQuery.setParameter("selectedId", toDelete.getId());
 		typedQuery.setMaxResults(1);
  

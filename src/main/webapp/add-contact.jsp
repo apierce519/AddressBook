@@ -18,6 +18,7 @@
 	<input type="text" name = "year" placeholder="yyyy" size="4">
 	<input type = "submit" value="Add Contact">
 	<a href = "viewAllContactsServlet">View all of the Contacts</a> <br />
+	<a href = "main-menu.html"> Go back to the homepage</a>
 </form> <br />
 </body>
 </html>
