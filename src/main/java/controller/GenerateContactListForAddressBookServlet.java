@@ -34,6 +34,7 @@ public class GenerateContactListForAddressBookServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setAttribute("allContacts", generateContactsList());
+		sendToNextPage(request, response);
 	}
 
 	/**
@@ -49,6 +50,14 @@ public class GenerateContactListForAddressBookServlet extends HttpServlet {
 	public List<Contact> generateContactsList() {
 		ContactHelper dao = new ContactHelper();
 		return dao.showAllEntries();
+	}
+
+	private void sendToNextPage(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			getServletContext().getRequestDispatcher("/add-address-book.jsp").forward(request, response);
+		} catch (ServletException | IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

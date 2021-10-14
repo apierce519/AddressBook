@@ -129,6 +129,11 @@ public class AddressBook {
 	private void setCreationDate() {
 		this.creationDate = LocalDate.now();
 	}
+	
+	public void updateContactCountAndCreationDate() {
+		setCreationDate();
+		setContactCount();
+	}
 
 	@Override
 	public String toString() {
