@@ -16,7 +16,7 @@ import model.Contact;
 /**
  * Servlet implementation class AddAddressBookServlet
  */
-@WebServlet("/AddAddressBookServlet")
+@WebServlet("/addAddressBookServlet")
 public class AddAddressBookServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

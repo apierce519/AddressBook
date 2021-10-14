@@ -15,6 +15,7 @@ import model.AddressBook;
 @WebServlet("/addressBookNavigationServlet")
 public class AddressBookNavigationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
 	private static AddressBookHelper dao = new AddressBookHelper();
 	private static String path = "/viewAllAddressBooksServlet";
 
@@ -54,10 +55,10 @@ public class AddressBookNavigationServlet extends HttpServlet {
 				addAddressBook();
 				break;
 			case "delete":
-				deleteAddressBook(request);
+				deleteAddressBook(request,response);
 				break;
 			case "edit":
-				editAddressBook(request);
+				editAddressBook(request,response);
 			default:
 				break;
 			}
@@ -74,18 +75,26 @@ public class AddressBookNavigationServlet extends HttpServlet {
 		}
 	}
 
-	public AddressBook searchAddressBooks(HttpServletRequest request) {
-		Integer tempId = Integer.parseInt(request.getParameter("id"));
+	public AddressBook searchAddressBooks(HttpServletRequest request, HttpServletResponse response) {
+		Integer tempId = null;
+		try {
+			tempId = Integer.parseInt(request.getParameter("id"));
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println("No Address Book was selected.");
+			sendToNextPage(request, response, path);
+		}
 		return dao.searchForAddressBookById(tempId);
 	}
 
-	public void deleteAddressBook(HttpServletRequest request) {
-		dao.deleteAddressBook(searchAddressBooks(request));
+	public void deleteAddressBook(HttpServletRequest request, HttpServletResponse response) {
+		dao.deleteAddressBook(searchAddressBooks(request,response));
 		path = "/viewAllAddressBooksServlet";
 	}
 
-	public void editAddressBook(HttpServletRequest request) {
-		AddressBook toEdit = searchAddressBooks(request);
+	public void editAddressBook(HttpServletRequest request, HttpServletResponse response) {
+		AddressBook toEdit = searchAddressBooks(request,response);
 		request.setAttribute("addressBookToEdit", toEdit);
 		request.setAttribute("month", toEdit.getCreationDate().getMonth());
 		request.setAttribute("day", toEdit.getCreationDate().getDayOfMonth());

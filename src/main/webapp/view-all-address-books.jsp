@@ -42,8 +42,9 @@
 		<input type = "submit" value = "delete" name = "command">
 		<input type = "submit" value = "add" name = "command">
 	</form>
-	
+	<br>
 	<a href = "generateContactListForAddressBookServlet">Create a new Address Book</a>
+	<br>
 	<a href = "main-menu.html">Return to main menu</a>
 	
 </body>
