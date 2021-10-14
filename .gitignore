@@ -8,7 +8,7 @@
 .project
 
 # Persistence
-src/META-INF/persistence.xml
+src/main/java/META-INF/persistence.xml
 
 /bin/
 /target
