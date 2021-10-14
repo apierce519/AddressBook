@@ -5,9 +5,30 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Add Address Book</title>
+<title>Create a New Address Book</title>
 </head>
 <body>
+	
+	<form action = "addAddressBookServlet" method = "post">
+	
+		Address Book name: <input type = "text" name = "abName"><br>
+		
+		Available Contacts:<br>
+		
+		<select name = "contactsToAdd" multiple size = "6">
+		
+			<c:forEach items = "${requestScope.allContacts}" var = "currentContact">
+			
+				 	<option value = "${currentContact.id }">${currentContact.name} | ${currentContact.dob} | ${currentContact.address} | ${currentContact.phoneNumber} | ${currentContact.contactCreated}</option>
+			
+			</c:forEach>
+		
+		</select>
+		<br>
+		<input type = "submit" value = "Create list and Add Items">
+	</form>
+<a href = "main-menu.html">Return to main menu.</a>
+
 
 </body>
 </html>

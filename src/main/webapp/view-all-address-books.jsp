@@ -43,7 +43,7 @@
 		<input type = "submit" value = "add" name = "command">
 	</form>
 	
-	<a href = "generateContactListForAddressBook">Create a new Address Book</a>
+	<a href = "generateContactListForAddressBookServlet">Create a new Address Book</a>
 	<a href = "main-menu.html">Return to main menu</a>
 	
 </body>
