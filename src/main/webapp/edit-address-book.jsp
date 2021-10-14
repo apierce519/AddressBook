@@ -24,6 +24,7 @@
 			<input type = "submit" value = "Edit List and Add Contacts">
 			
 	</form>
+	<br>
 	<a href = "main-menu.html">Add new Contacts.</a>
 
 </body>

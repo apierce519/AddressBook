@@ -27,6 +27,7 @@
 		<br>
 		<input type = "submit" value = "Create list and Add Items">
 	</form>
+	<br>
 <a href = "main-menu.html">Return to main menu.</a>
 
 
