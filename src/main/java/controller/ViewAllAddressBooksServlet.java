@@ -17,48 +17,59 @@ import model.AddressBook;
 @WebServlet("/viewAllAddressBooksServlet")
 public class ViewAllAddressBooksServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ViewAllAddressBooksServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	String path = "/view-all-address-books.jsp";
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public ViewAllAddressBooksServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		List<AddressBook> tempList = getAddressBooks();
-		if(tempList.isEmpty()) {
-			request.setAttribute("allAddressBooks", " ");
-			System.out.println("Its Empty.");
-		}else {
+		validateAddressBooks(request, tempList);
+		sendToNextPage(request, response, path);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+	private HttpServletRequest validateAddressBooks(HttpServletRequest request, List<AddressBook> tempList) {
+		if (tempList.isEmpty()) {
+			path = "/generateContactListForAddressBookServlet";
+			System.out.println("No address books found.");
+		} else {
 			request.setAttribute("allAddressBooks", tempList);
 			System.out.println("Its not empty.");
 			System.out.println(tempList.toString());
 		}
-		sendToNextPage(request,response);
+		return request;
+
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-	
-	private void sendToNextPage(HttpServletRequest request, HttpServletResponse response) {
+	private void sendToNextPage(HttpServletRequest request, HttpServletResponse response, String path) {
 		try {
-			getServletContext().getRequestDispatcher("/view-all-address-books.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher(path).forward(request, response);
 		} catch (ServletException | IOException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public List<AddressBook> getAddressBooks() {
 		AddressBookHelper abh = new AddressBookHelper();
 		List<AddressBook> addressBookList = abh.getAddressBooks();

@@ -9,6 +9,7 @@
 <title>All Address Books</title>
 </head>
 <body>
+<h1>View All Address Books</h1>
 
 	<form method = "post" action = "addressBookNavigationServlet">
 	

@@ -8,6 +8,7 @@
 <title>Edit Address Book</title>
 </head>
 <body>
+<h1>Edit Selected Address Book</h1>
 	<form action = "editAddressBookServlet" method = "post">
 	
 		<input type = "hidden" name = "id" value = "${addressBookToEdit.id}">
