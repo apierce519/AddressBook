@@ -50,7 +50,7 @@ public class EditContactServlet extends HttpServlet {
 		String day = request.getParameter("day");
 		String year = request.getParameter("year");
 		
-		LocalDateTime creationDate = LocalDateTime.now();
+	
 		LocalDate dateOfBirth;
 		try {
 			dateOfBirth = LocalDate.of(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day));
@@ -63,7 +63,7 @@ public class EditContactServlet extends HttpServlet {
 		contactToEdit.setPhoneNumber(phoneNum);
 		contactToEdit.setAddress(address);
 		contactToEdit.setDob(dateOfBirth);
-		contactToEdit.setContactCreated(creationDate);
+		contactToEdit.setContactCreated();
 		
 		ch.editEntry(contactToEdit);
 		getServletContext().getRequestDispatcher("/viewAllContactsServlet").forward(request, response);

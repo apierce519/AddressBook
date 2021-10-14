@@ -49,7 +49,7 @@ public class AddContactServlet extends HttpServlet {
 		String day = request.getParameter("day");
 		String year = request.getParameter("year");
 		
-		LocalDateTime creationDate = LocalDateTime.now();
+		LocalDate creationDate = LocalDate.now();
 		LocalDate dateOfBirth;
 		try {
 			dateOfBirth = LocalDate.of(Integer.parseInt(year), Integer.parseInt(month), Integer.parseInt(day));

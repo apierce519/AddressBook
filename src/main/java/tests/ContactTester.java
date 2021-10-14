@@ -16,8 +16,8 @@ import model.Contact;
 public class ContactTester {
 	public static void main(String[] args) {
 		
-		Contact contact1 = new Contact("Bill", LocalDate.of(2002, 10, 25), "555 North Ave.", "641-123-4567", LocalDateTime.now());
-		Contact contact2 = new Contact("Alex", LocalDate.of(1999, 12, 05), "678 South Road", "641-008-9999", LocalDateTime.now());
+		Contact contact1 = new Contact("Bill", LocalDate.of(2002, 10, 25), "555 North Ave.", "641-123-4567", LocalDate.now());
+		Contact contact2 = new Contact("Alex", LocalDate.of(1999, 12, 05), "678 South Road", "641-008-9999", LocalDate.now());
 		ContactHelper ch = new ContactHelper();
 		
 		ch.insertEnrty(contact1);

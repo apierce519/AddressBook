@@ -34,10 +34,10 @@ public class AddressBookTester {
 		AddressBookHelper abh = new AddressBookHelper();
 
 		Contact testContactOne = new Contact("Todd", LocalDate.of(2000, 12, 12), "123 East Road Street", "515-867-5309",
-				LocalDateTime.now());
+				LocalDate.now());
 
 		Contact testContactTwo = new Contact("Randy", LocalDate.of(2001, 01, 01), "456 West Street Road",
-				"515-903-5768", LocalDateTime.now());
+				"515-903-5768", LocalDate.now());
 
 		List<Contact> contactList = new ArrayList<Contact>();
 

@@ -27,7 +27,7 @@ public class Contact {
 	private LocalDate dob;
 	private String address;
 	private String phoneNumber;
-	private LocalDateTime contactCreated;
+	private LocalDate contactCreated;
 	
 	//Constructors
 	public Contact() {
@@ -35,7 +35,7 @@ public class Contact {
 	}
 
 	public Contact(int id, String name, LocalDate dob, String address, String phoneNumber,
-			LocalDateTime contactCreated) {
+			LocalDate contactCreated) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -45,7 +45,7 @@ public class Contact {
 		this.contactCreated = contactCreated;
 	}
 
-	public Contact(String name, LocalDate dob, String address, String phoneNumber, LocalDateTime contactCreated) {
+	public Contact(String name, LocalDate dob, String address, String phoneNumber, LocalDate contactCreated) {
 		super();
 		this.name = name;
 		this.dob = dob;
@@ -79,11 +79,11 @@ public class Contact {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-	public LocalDateTime getContactCreated() {
+	public LocalDate getContactCreated() {
 		return contactCreated;
 	}
-	public void setContactCreated(LocalDateTime contactCreated) {
-		this.contactCreated = contactCreated;
+	public void setContactCreated() {
+		this.contactCreated = LocalDate.now();
 	}
 
 	public int getId() {
