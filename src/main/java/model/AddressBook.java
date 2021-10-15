@@ -26,7 +26,7 @@ public class AddressBook {
 	private String listName;
 	private int contactCount;
 	private LocalDate creationDate;
-	@OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+	@OneToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
 	private List<Contact> contactList;
 
 	/**
